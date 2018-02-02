@@ -1,9 +1,7 @@
-#!/bin/sh -el
+#!/bin/bash
 
-if [ -z "$VPN_PASSWORD" ]; then
-  exec openconnect --protocol=gp $VPN_SERVER -u $VPN_USER "$@"
-else
-  exec openconnect --protocol=gp $VPN_SERVER -u $VPN_USER --passwd-on-stdin "$@" <<END
-$VPN_PASSWORD
-END
-fi
+echo "tuntap creation"
+ip tuntap add vpn0 mode tun user root
+
+echo "openconnect starting"
+  (echo $VPN_PASSWORD; echo "yes") | /openconnect/./openconnect --protocol=gp $VPN_SERVER -u $VPN_USER --passwd-on-stdin
