@@ -12,7 +12,7 @@ docker run -itd --privileged --cap-add=NET_ADMIN -p <localport:insideport> -e VP
 
 ## Image build with
 
-* distro: Ubuntu Artful
+* distro: Debian Stretch
 * packages: build-essential gettext autoconf automake libproxy-dev libxml2-dev libtool vpnc-scripts pkg-config iptables libgnutls28-dev libopenconnect-dev git
 * iptables: nat to your local service (example: dockerLocalIp:172.16.0.10 -> remoteLocalIp:10.0.0.100)
 
@@ -24,9 +24,8 @@ docker run -itd --privileged --cap-add=NET_ADMIN -p <localport:insideport> -e VP
 ## Authors
 
 * Edson Ma - [github](https://github.com/edsonma)
+* Lappis Team - [github](https://github.com/lappis-unb)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-
