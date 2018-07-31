@@ -8,4 +8,4 @@ iptables -t nat -A PREROUTING -p tcp -m tcp --dport $SERVICE_PORT -j DNAT --to-d
 iptables -t nat -A POSTROUTING -p tcp -m tcp --dport $SERVICE_PORT -j MASQUERADE
 
 echo "openconnect starting"
-(echo $VPN_PASSWORD; echo "yes") | /openconnect/./openconnect --protocol=gp $VPN_SERVER -u $VPN_USER --passwd-on-stdin
+(echo $VPN_PASSWORD; echo "yes") | /openconnect/openconnect --protocol=gp $VPN_SERVER -u $VPN_USER --passwd-on-stdin

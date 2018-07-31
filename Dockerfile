@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get install -y build-essential gettext autoconf automake \
                        libproxy-dev libxml2-dev libtool vpnc-scripts \
                        pkg-config iptables libgnutls28-dev libopenconnect-dev \
-                       git
+                       git sshpass
 
 #RUN git clone git://git.infradead.org/users/dwmw2/openconnect.git
 # using the mirror from gitlab cause the local network at Lappis doesn't
