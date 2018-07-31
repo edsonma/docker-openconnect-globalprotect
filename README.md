@@ -1,6 +1,7 @@
 # OpenConnect Global VPN 
 
-This container runs PaloNetworks' GlobalProtect VPN using OpenConnect 
+This container runs PaloNetworks' GlobalProtect VPN using OpenConnect from
+latest upstream source code.
 
 ## Getting Started
 
