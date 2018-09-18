@@ -1,0 +1,21 @@
+version: '2'
+services:
+  openconnect-globalprotect:
+    image: lappis/openconnect-globalprotect
+    environment:
+      VPN_PASSWORD: 8i5vmTDL
+      VPN_SERVER: vpn.cultura.gov.br
+      VPN_USER: matheus_faria
+      SERVICE_IP: 10.0.0.205
+      SERVICE_PORT: '1435'
+      REDIRECT_IP: 192.168.15.16
+      REDIRECT_PORTS: 8080:8081
+    stdin_open: true
+    tty: true
+    ports:
+    - 1435:1435/tcp
+    user: root
+    labels:
+      io.rancher.container.start_once: 'true'
+      io.rancher.container.pull_image: always
+

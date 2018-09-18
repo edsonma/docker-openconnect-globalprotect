@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    io.rancher.container.pull_image: always
+    io.rancher.container.start_once: "true"
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.16.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: openconnect-globalprotect
+  name: openconnect-globalprotect
+spec:
+  ports:
+  - name: "1435"
+    port: 1435
+    targetPort: 1435
+  selector:
+    io.kompose.service: openconnect-globalprotect
+status:
+  loadBalancer: {}
